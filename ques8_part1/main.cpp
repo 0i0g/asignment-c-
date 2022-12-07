@@ -15,10 +15,11 @@ bool readNumberFromFile(string fileName, int *arrayNumber, int *arrayLength, int
     file.open(fileName);
     // Read number and save into array if not reached the limit
     if (file.is_open()) {
-        while (getline(file, line) && *arrayLength < limit) {
-            arrayNumber[*arrayLength] = stoi(line);
+        while(!file.eof()){
+            file >> arrayNumber[*arrayLength];
             (*arrayLength)++;
         }
+        file.close();
         return true;
     }
 
