@@ -9,8 +9,6 @@ using namespace std;
 
 // Ask user to enter all answers
 void askUserEnterAnswers(char *userAnswers, int amount) {
-    const string ACCEPT_ANSWER = "ABCD";
-
     cout << "Enter your answers (A, B, C, D)" << endl;
     for (int i = 0; i < amount; ++i) {
         cout << "Answer " << i + 1 << ":";
@@ -21,7 +19,10 @@ void askUserEnterAnswers(char *userAnswers, int amount) {
             cin >> answer;
 
             // Check if answer is accepted
-            if (ACCEPT_ANSWER.find(answer) != string::npos) {
+            if (answer == 'A' ||
+                answer == 'B' ||
+                answer == 'C' ||
+                answer == 'D') {
                 // Save user answer
                 userAnswers[i] = answer;
                 a = false;
@@ -92,7 +93,7 @@ int main() {
     cout << "Total correct: " << totalCorrect << endl;
     cout << "Total incorrect: " << totalIncorrect << endl;
 
-    if(totalIncorrect > 0){
-    cout << "Incorrectly answered: " << joinInts(incorrectlyAnswered, totalIncorrect, ", ");
+    if (totalIncorrect > 0) {
+        cout << "Incorrectly answered: " << joinInts(incorrectlyAnswered, totalIncorrect, ", ");
     }
 }
