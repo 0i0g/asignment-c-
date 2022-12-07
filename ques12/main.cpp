@@ -69,14 +69,14 @@ int main() {
     // Print result with 24h format
     cout << "Single line of rental invoice using 24 hour clock:" << endl;
     cout << name << endl;
-    cout << "\ts:wide and Pin Point\t\t" << timeInObj.getTime24h() << "\t" << timeOutObj.getTime24h() << "\t"
-         << subtract_time(timeInObj, timeOutObj).getTime24h() << endl;
+    cout << "\ts:wide and Pin Point\t\t" << timeInObj.getTime24h() << "\t\t" << timeOutObj.getTime24h() << "\t\t"
+         << subtract_time(timeOutObj, timeInObj).getTime24h() << endl;
 
     // Print result with AM/PM format
     cout << "Single line of rental invoice using AM/PM clock:" << endl;
     cout << name << endl;
-    cout << "\ts:wide and Pin Point\t\t" << timeInObj.getTimeAMPM() << "\t" << timeOutObj.getTimeAMPM() << "\t"
-         << subtract_time(timeInObj, timeOutObj).getTimeAMPM() << endl;
+    cout << "\ts:wide and Pin Point\t\t" << timeInObj.getTimeAMPM() << "\t\t" << timeOutObj.getTimeAMPM() << "\t\t"
+         << subtract_time(timeOutObj, timeInObj).getTime24h() << endl;
 
     return 0;
 }
