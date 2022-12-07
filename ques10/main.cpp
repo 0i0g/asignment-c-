@@ -1,8 +1,23 @@
 #include <iostream>
 #include <vector>
-#include <cstring>
 
 using namespace std;
+
+
+int strcmp(const char str1[50], const char str2[50]) {
+    int i = 0, chk = 0;
+    while (str1[i] != '\0' || str2[i] != '\0') {
+        if (str1[i] > str2[i]) {
+            chk = 1;
+            break;
+        } else if (str1[i] < str2[i]) {
+            chk = -1;
+            break;
+        }
+        i++;
+    }
+    return chk;
+}
 
 // Search the first greater than value
 int linearSearch(vector<string> vec, const char *value) {
