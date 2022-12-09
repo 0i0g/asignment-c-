@@ -7,12 +7,12 @@ using namespace std;
 string *split(string str, char delimiter) {
     string *result = new string[100];
     int i = 0;
-    for (char c: str) {
-        if (c == delimiter) {
+    for (int j = 0; str[j] != '\0'; j++) {
+        if (str[j] == delimiter) {
             i++;
             continue;
         }
-        result[i] += c;
+        result[i] += str[j];
     }
     return result;
 }
